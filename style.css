@@ -1,0 +1,125 @@
+/* Global reset: saare elements ka box model consistent + default margin/padding hatao */
+* {
+  box-sizing: border-box;  /* padding/border width ke andar count, layout easy */
+  margin: 0;               /* default outer gap hatao */
+  padding: 0;              /* default inner gap hatao */
+}
+
+/* Page layout: full height, center content, pure dark (non‑blue) theme */
+body {
+  min-height: 100vh;  /* page height kam se kam viewport ke barabar */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #18181b 0, #050505 40%, #020202 100%);
+  /* neutral dark grey/black gradient, no blue tint [web:217][web:221] */
+  color: #e5e7eb;     /* light grey text for contrast */
+  display: flex;      /* sticky footer ke liye flex layout [column] [web:255][web:260] */
+  flex-direction: column; /* content upar se neeche stack hoga */
+  align-items: center;    /* horizontally center body ke children (main + footer) */
+}
+
+/* top image */
+.top-image-wrapper {
+  margin-top: 80px;   /* top se gap */
+  text-align: center; /* image ko horizontal center karega */
+}
+
+.top-image {
+  width: 100px;  /* fixed width */
+  height: auto;  /* aspect ratio maintain */
+}
+
+/* heading */
+#countdown-text {
+  text-align: center;      /* heading center */
+  margin-top: 12px;        /* image aur heading ke beech gap */
+  font-size: 18px;         /* size */
+  letter-spacing: 2px;     /* characters ke beech space */
+  text-transform: uppercase; /* title jaisa all caps */
+}
+
+/* main area jo counter hold karega, footer ko neeche push kare */
+main {
+  width: 100%;            /* poori width */
+  flex: 1;                /* bacha hua vertical space lega, footer bottom pe jayega [web:255] */
+  display: flex;          /* main ke andar content ko center karne ke liye */
+  flex-direction: column; /* upar se neeche */
+  align-items: center;    /* horizontal center */
+}
+
+/* counters container */
+#countdown-container {
+  text-align: center; /* inline-block counters ko center row me rakhta hai */
+  margin-top: 40px;   /* heading ke neeche gap */
+}
+
+/* each counter wrapper */
+.counter {
+  display: inline-block; /* side‑by‑side boxes, width respect hoti hai [web:217][web:222] */
+  width: 72px;           /* sab counters same width */
+  margin: 0 8px;         /* left/right gap */
+  text-align: center;    /* number + label center */
+}
+
+/* number box styling */
+.number {
+  font-size: 40px;           /* bada number */
+  margin-bottom: 10px;       /* number aur label ke beech gap */
+  padding: 10px 0;           /* box ke andar top/bottom space */
+  font-weight: 700;          /* bold */
+  background-color: #111111; /* near‑black box (no blue) */
+  border-radius: 10px;       /* rounded corners */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+  /* soft shadow for card feel, blandness kam kare [web:217][web:223] */
+}
+
+/* label (DAYS / HOURS) */
+.label {
+  font-size: 12px;      /* chhota text */
+  color: #a1a1aa;       /* neutral grey */
+  letter-spacing: 1px;  /* thoda spacing for clean look */
+}
+
+/* hover effect to make counters feel interactive */
+.counter:hover .number {
+  transform: translateY(-2px);                 /* halka float effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);  /* hover pe zyada shadow */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  /* smooth animation on hover */
+}
+
+/* footer */
+.footer {
+  width: 100%;       
+  text-align: center;   /* center text/icons */
+  margin-bottom: 20px;  /* bottom se gap */
+  font-size: 14px;      /* thoda chhota */
+  color: #a1a1aa;       /* neutral grey text */
+}
+
+.social-links {
+  margin-bottom: 20px;  
+}
+
+.social-links a {
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.icon {
+  width: 26px;                
+  height: 26px;
+  filter: invert(1) opacity(0.85);
+}
+
+.icon:hover {
+  filter: invert(1) brightness(1.4);
+  width: 30px;
+  height: 30px;
+  transition-duration: 0.4s;
+}
+
+.credit {
+  font-size: 13px; 
+  color: #a1a1aa;
+  opacity: 0.9;  
+}
