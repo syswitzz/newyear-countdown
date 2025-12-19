@@ -22,52 +22,48 @@ body {
 
 /* top image */
 .top-image-wrapper {
-  margin-top: 80px;   /* top se gap */
+  margin-top: 80px;   
   text-align: center; /* image ko horizontal center karega */
 }
 
 .top-image {
-  width: 100px;  /* fixed width */
-  height: auto;  /* aspect ratio maintain */
+  width: 100px;  
+  height: auto; 
 }
 .top-image:hover {
-  transform: scale(1.1);          /* halka zoom on hover */
+  transform: scale(1.1);          
   transition: transform 0.5s ease; /* smooth animation */
   transform: rotate(360deg);
 }
 /* heading */
 #countdown-text {
-  text-align: center;      /* heading center */
-  margin-top: 12px;        /* image aur heading ke beech gap */
-  font-size: 18px;         /* size */
+  text-align: center;     
+  margin-top: 12px;      
+  font-size: 18px;        
   letter-spacing: 2px;     /* characters ke beech space */
   text-transform: uppercase; /* title jaisa all caps */
 }
 
-/* main area jo counter hold karega, footer ko neeche push kare */
 main {
-  width: 100%;            /* poori width */
+  width: 100%;           
   flex: 1;                /* bacha hua vertical space lega, footer bottom pe jayega [web:255] */
   display: flex;          /* main ke andar content ko center karne ke liye */
   flex-direction: column; /* upar se neeche */
-  align-items: center;    /* horizontal center */
+  align-items: center;   
 }
 
-/* counters container */
 #countdown-container {
-  text-align: center; /* inline-block counters ko center row me rakhta hai */
-  margin-top: 40px;   /* heading ke neeche gap */
+  text-align: center; 
+  margin-top: 40px; 
 }
 
-/* each counter wrapper */
 .counter {
   display: inline-block; /* side‑by‑side boxes, width respect hoti hai [web:217][web:222] */
   width: 72px;           /* sab counters same width */
-  margin: 0 8px;         /* left/right gap */
-  text-align: center;    /* number + label center */
+  margin: 0 8px;       
+  text-align: center;   
 }
 
-/* number box styling */
 .number {
   font-size: 40px;           /* bada number */
   margin-bottom: 10px;       /* number aur label ke beech gap */
@@ -78,10 +74,9 @@ main {
   /* soft shadow for card feel, blandness kam kare [web:217][web:223] */
 }
 
-/* label (DAYS / HOURS) */
 .label {
-  font-size: 12px;      /* chhota text */
-  color: #a1a1aa;       /* neutral grey */
+  font-size: 12px;     
+  color: #a1a1aa;  
   letter-spacing: 1px;  /* thoda spacing for clean look */
 }
 
@@ -93,13 +88,12 @@ main {
   /* smooth animation on hover */
 }
 
-/* footer */
 .footer {
   width: 100%;       
-  text-align: center;   /* center text/icons */
-  margin-bottom: 20px;  /* bottom se gap */
-  font-size: 14px;      /* thoda chhota */
-  color: #a1a1aa;       /* neutral grey text */
+  text-align: center;  
+  margin-bottom: 20px; 
+  font-size: 14px;      
+  color: #a1a1aa;    
 }
 
 .social-links {
@@ -132,28 +126,21 @@ main {
 }
 
 @media (max-width: 480px) {
-  /* top spacing thoda kam on small screens */
   .top-image-wrapper {
     margin-top: 50px;
   }
-
-  /* heading slightly smaller */
   #countdown-text {
     font-size: 16px;
     letter-spacing: 1.5px;
   }
-
-  /* counters: thoda chhota, gap kam */
   .counter {
     width: 64px;
     margin: 0 6px;
   }
-
   .number {
     font-size: 32px;
     padding: 8px 0;
   }
-
   .label {
     font-size: 11px;
   }
@@ -195,21 +182,19 @@ main {
   color: #a1a1aa;
 }
 
-/* select: minimal, text-like style */
 #timezone-select {
   margin-left: 5px;
-  padding: 0 2px;                 /* almost no boxy feel */
+  padding: 0 2px;                 
   font-size: 12px;
-  background-color: transparent;  /* pure dark bg se match */
-  color: #a1a1aa;                 /* light text */
+  background-color: transparent; 
+  color: #a1a1aa;                 
   border: none;                   /* no visible border */
   border-bottom: 1px solid #3f3f46; /* subtle underline instead of box */
 }
 
-/* hover/focus pe thoda emphasis */
 #timezone-select:hover,
 #timezone-select:focus,
 #timezone-select:active {
   border-bottom-color: #9ca3af9d;    /* thoda lighter underline on hover */
-  background-color: #09090b;       /* dark bg instead of white */
+  background-color: #09090b;    
 }
