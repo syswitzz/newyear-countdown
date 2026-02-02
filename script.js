@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 2) Targets - HTML se exact match
   const targets = {
-    "IST": new Date("2026-01-01T00:00:00+05:30"),
-    "UTC": new Date("2026-01-01T00:00:00Z"),
-    "EST": new Date("2026-01-01T00:00:00-05:00"),
-    "CET": new Date("2026-01-01T00:00:00+01:00"),
-    "JST": new Date("2026-01-01T00:00:00+09:00"),
-    "MSK": new Date("2026-01-01T00:00:00+03:00")
+    "IST": new Date("2027-01-01T00:00:00+05:30"),
+    "UTC": new Date("2027-01-01T00:00:00Z"),
+    "EST": new Date("2027-01-01T00:00:00-05:00"),
+    "CET": new Date("2027-01-01T00:00:00+01:00"),
+    "JST": new Date("2027-01-01T00:00:00+09:00"),
+    "MSK": new Date("2027-01-01T00:00:00+03:00")
   };
   let currentTarget = targets["IST"].getTime();  // India default
 
