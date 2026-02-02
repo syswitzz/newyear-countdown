@@ -19,21 +19,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 3) Timer
   function updateTimer() {
-    const now = new Date().getTime();
-    const diff = currentTarget - now;
-    if (diff <= 0) {
-      daysEl.textContent = 0; hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = "00";
-      return;
-    }
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-    daysEl.textContent = days;
-    hoursEl.textContent = String(hours).padStart(2, "0");
-    minutesEl.textContent = String(minutes).padStart(2, "0");
-    secondsEl.textContent = String(seconds).padStart(2, "0");
+  const now = Date.now(); // absolute UTC time
+  const diff = currentTarget - now;
+
+  if (diff <= 0) {
+    daysEl.textContent = "0";
+    hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = "00";
+    return;
   }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  daysEl.textContent = days;
+  hoursEl.textContent = String(hours).padStart(2, "0");
+  minutesEl.textContent = String(minutes).padStart(2, "0");
+  secondsEl.textContent = String(seconds).padStart(2, "0");
+}
+
   
   // 4) Timezone change
   timezoneSelect.addEventListener("change", () => {
