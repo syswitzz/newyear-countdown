@@ -1,29 +1,26 @@
-/* Global reset: saare elements ka box model consistent + default margin/padding hatao */
 * {
-  box-sizing: border-box;  /* padding/border width ke andar count, layout easy */
-  margin: 0;               /* default outer gap hatao */
-  padding: 0;              /* default inner gap hatao */
+  box-sizing: border-box;  
+  margin: 0;            
+  padding: 0;             
 }
 
-/* Page layout: full height, center content, pure dark (non‑blue) theme */
 body {
-  min-height: 100vh;  /* page height kam se kam viewport ke barabar */
+  min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-image: url("images/bg.jpg");
   background-position: center;
   background-color: rgba(0, 0, 0, 0.80); 
   backdrop-filter: blur(0.85px);
   -webkit-backdrop-filter: blur(0.85px);
-  color: #e5e7eb;     /* light grey text for contrast */
-  display: flex;      /* sticky footer ke liye flex layout [column] [web:255][web:260] */
-  flex-direction: column; /* content upar se neeche stack hoga */
-  align-items: center;    /* horizontally center body ke children (main + footer) */
+  color: #e5e7eb;    
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
 }
 
-/* top image */
 .top-image-wrapper {
   margin-top: 80px;   
-  text-align: center; /* image ko horizontal center karega */
+  text-align: center;
 }
 
 .top-image {
@@ -32,23 +29,22 @@ body {
 }
 .top-image:hover {
   transform: scale(1.1);          
-  transition: transform 0.5s ease; /* smooth animation */
+  transition: transform 0.5s ease;
   transform: rotate(360deg);
 }
-/* heading */
 #countdown-text {
   text-align: center;     
   margin-top: 12px;      
   font-size: 18px;        
-  letter-spacing: 2px;     /* characters ke beech space */
-  text-transform: uppercase; /* title jaisa all caps */
+  letter-spacing: 2px;     
+  text-transform: uppercase; 
 }
 
 main {
   width: 100%;           
-  flex: 1;                /* bacha hua vertical space lega, footer bottom pe jayega [web:255] */
-  display: flex;          /* main ke andar content ko center karne ke liye */
-  flex-direction: column; /* upar se neeche */
+  flex: 1;                
+  display: flex;         
+  flex-direction: column;
   align-items: center;   
 }
 
@@ -58,34 +54,31 @@ main {
 }
 
 .counter {
-  display: inline-block; /* side‑by‑side boxes, width respect hoti hai [web:217][web:222] */
-  width: 72px;           /* sab counters same width */
+  display: inline-block;
+  width: 72px;          
   margin: 0 8px;       
   text-align: center;   
 }
 
 .number {
-  font-size: 40px;           /* bada number */
-  margin-bottom: 10px;       /* number aur label ke beech gap */
-  padding: 10px 0;           /* box ke andar top/bottom space */
-  font-weight: 700;          /* bold */
-  border-radius: 10px;       /* rounded corners */
+  font-size: 40px;          
+  margin-bottom: 10px;      
+  padding: 10px 0;     
+  font-weight: 700;      
+  border-radius: 10px;      
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
-  /* soft shadow for card feel, blandness kam kare [web:217][web:223] */
 }
 
 .label {
   font-size: 12px;     
   color: #a1a1aa;  
-  letter-spacing: 1px;  /* thoda spacing for clean look */
+  letter-spacing: 1px;
 }
 
-/* hover effect to make counters feel interactive */
 .counter:hover .number {
-  transform: translateY(-2px);                 /* halka float effect */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);  /* hover pe zyada shadow */
+  transform: translateY(-2px);                 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8); 
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  /* smooth animation on hover */
 }
 
 .footer {
@@ -125,34 +118,32 @@ main {
   margin-bottom: 20px;
 }
 
-/* snowflakes ke liye container: poori screen cover, pointer block nahi karega */
 #snow-container {
   position: fixed;
   inset: 0;              /* top:0; right:0; bottom:0; left:0; same */
   pointer-events: none;  /* clicks neeche ke elements pe jayenge */
-  overflow: hidden;      /* bahar ke flakes hide */
-  z-index: 10;           /* content ke upar, par kuch bhi overlay heavy nahi */
+  overflow: hidden;      
+  z-index: 10;         
 }
 
 /* individual snowflake */
 .snowflake {
   position: absolute;
-  top: -10px;            /* screen se thoda upar se start */
-  color: #ffffff;        /* white snow */
+  top: -10px;           
+  color: #ffffff;       
   opacity: 0.9;
-  font-size: 12px;       /* base size, JS se random bhi kar sakta hai */
+  font-size: 12px;    
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   will-change: transform;
-  transform: translateZ(0);  /* GPU */
-  pointer-events: none;      /* touch block nahi karega */
+  transform: translateZ(0); 
+  pointer-events: none;
 }
 
-/* falling animation */
 @keyframes fall {
   to {
-    transform: translateY(110vh);  /* screen ke neeche tak girna */
+    transform: translateY(110vh);  
   }
 }
 
@@ -168,14 +159,14 @@ main {
   font-size: 12px;
   background-color: transparent; 
   color: #a1a1aa;                 
-  border: none;                   /* no visible border */
-  border-bottom: 1px solid #3f3f46; /* subtle underline instead of box */
+  border: none;
+  border-bottom: 1px solid #3f3f46;
 }
 
 #timezone-select:hover,
 #timezone-select:focus,
 #timezone-select:active {
-  border-bottom-color: #9ca3af9d;    /* thoda lighter underline on hover */
+  border-bottom-color: #9ca3af9d;   
   background-color: #09090b;    
 }
 
